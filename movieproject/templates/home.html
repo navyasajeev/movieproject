@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<center>
+  <h1>MOVIES LIST</h1>
+<!--<table class="table table-bordered">-->
+<!--  <tr>-->
+<!--    <th>ID</th>-->
+<!--      <th>COVER</th>-->
+<!--    <th>TITLE</th>-->
+<!--    <th>AUTHOR</th>-->
+<!--    <th>PRICE</th>-->
+<!--      <th>DOCUMENT</th>-->
+<!--    <th>VIEW</th>-->
+<!--    <th>EDIT</th>-->
+<!--      <th>DELETE</th>-->
+<!--  </tr>-->
+<!--  {% for i in b %}-->
+<!--  <tr>-->
+<!--    <td>{{i.id}}</td>-->
+<!--      <td><img src="{{i.cover.url}}" height="100px" width="100px"></td>-->
+<!--    <td>{{i.title}}</td>-->
+<!--    <td>{{i.author}}</td>-->
+<!--    <td>{{i.price}}</td>-->
+<!--      <td><a href="{{i.pdf.url}}">Download</a></td>-->
+<!--     <td><a href="{% url 'books:bookdetail' i.id %}" class="btn btn-danger">View</a></td>-->
+<!--    <td><a href="{% url 'books:bookedit' i.id %}" class="btn btn-danger">Edit</a></td>-->
+<!--    <td><a href="{% url 'books:bookdelete' i.id %}" class="btn btn-danger">Delete</a></td>-->
+<!--  </tr>-->
+<!--  {% endfor %}-->
+<!--</table>-->
+
+
+<div class="row">
+ {% for i in  m %}
+
+     <div class="col-6 col-md-3 my-3">
+ <div class="card " style="width: 18rem; ">
+
+
+  <img src="{{i.image.url}}" height="200px" width="100px" class="card-img-top" alt="...">
+  <div class="card-body mb-5">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text">{{i.desc}}</p>
+    <a href="{% url 'details'  i.id %}" class="btn btn-primary">Details</a>
+  </div>
+       </div>
+     </div>
+
+
+     {% endfor %}
+  </div>
+
+
+
+
+
+
+
+<!--  <div class="card " style="width: 18rem; ">-->
+<!--    {% for i in  m %}-->
+<!--  <img src="{{i.image.url}}" height="150px" width="100px" class="card-img-top" alt="...">-->
+<!--  <div class="card-body mb-5">-->
+<!--    <h5 class="card-title">{{i.name}}</h5>-->
+<!--    <p class="card-text">{{i.desc}}</p>-->
+<!--    <a href="{% url 'details'  i.id %}" class="btn btn-primary">Go somewhere</a>-->
+<!--  </div>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+
+
+
+</center>
+<!--<ol>-->
+<!--   {% for i in b%}-->
+<!--  <li>Book Details</li>-->
+<!--  <ul>-->
+<!--   <li> Title:{{i.title}}</li>-->
+<!--    <li>Author:{{i.author}}</li>-->
+<!--    <li>price:{{i.price}}</li>-->
+<!--  </ul>-->
+<!--   {% endfor %}-->
+
+<!--</ol>-->
+{% endblock %}
